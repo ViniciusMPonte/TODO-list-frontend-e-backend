@@ -14,7 +14,16 @@ public class Cli {
         CREATE_TASK_OPTIONS.put("confirmation", "Confirma a criação da tarefa com as informações abaixo? (S/N)");
     }
 
-
+    public static final Map<String, String> TASK_VALIDATIONS = new HashMap<>();
+    static {
+        TASK_VALIDATIONS.put("repeatedName", "Já há uma tarefa com esse nome! Digite algo diferente: ");
+        TASK_VALIDATIONS.put("emptyName", "Nome vazio! Digite algo diferente: ");
+        TASK_VALIDATIONS.put("repeatedDescription", "Já há uma tarefa com essa descrição! Digite algo diferente: ");
+        TASK_VALIDATIONS.put("emptyDescription", "Descrição vazia! Digite algo diferente: ");
+        TASK_VALIDATIONS.put("emptyCategory", "Categoria vazia! Digite algo diferente: ");
+        TASK_VALIDATIONS.put("invalidPriorityLevel", "Nível de prioridade inválido! Digite o número da prioridade (de 1 a 5): ");
+        TASK_VALIDATIONS.put("priorityLevelOutOfRange", "Nível de prioridade fora do intervalo! Digite o número da prioridade (de 1 a 5): ");
+    }
 
 
 

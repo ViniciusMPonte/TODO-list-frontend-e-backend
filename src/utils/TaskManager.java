@@ -27,15 +27,31 @@ public class TaskManager {
         Collections.sort(tasks, Comparator.comparing(Task::getPriorityLevel));
     }
 
-    // Ordenar por status
     public void sortByStatus() {
         Collections.sort(tasks, Comparator.comparing(Task::getStatus));
     }
 
-    // Listar todas as tasks
     public void listTasks() {
         for (Task task : tasks) {
             System.out.println(task);
         }
+    }
+
+    public boolean validateNewTaskName(String name) {
+        for (Task task : tasks) {
+            if (task.getName().equalsIgnoreCase(name)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean validateNewTaskDescription(String description) {
+        for (Task task : tasks) {
+            if (task.getDescription().equalsIgnoreCase(description)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

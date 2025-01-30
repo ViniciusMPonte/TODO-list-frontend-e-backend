@@ -4,6 +4,7 @@ import utils.DateTime;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class Task {
 
@@ -34,28 +35,51 @@ public class Task {
         this.finishDate = null;
     }
 
+    public Task() {
+        this.name = "";
+        this.description = "";
+        this.category = "";
+        this.priorityLevel = 1;
+        this.statusIndex = 0;
+        this.startDate = new DateTime().now();
+        this.modificationDate = null;
+        this.finishDate = null;
+    }
+
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public boolean setName(String name) {
+        if (Objects.equals(name, "")) {
+            return false;
+        }
         this.name = name;
+        return true;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public boolean setDescription(String description) {
+        if (Objects.equals(description, "")) {
+            return false;
+        }
         this.description = description;
+        return true;
     }
 
     public String getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public boolean setCategory(String category) {
+        if (Objects.equals(category, "")) {
+            return false;
+        }
         this.category = category;
+        return true;
     }
 
     public int getPriorityLevel() {
@@ -78,7 +102,7 @@ public class Task {
 
     public boolean setStatusIndex(int statusIndex) {
         if(priorityLevel >= 0 && priorityLevel <= 2){
-        this.statusIndex = statusIndex;
+            this.statusIndex = statusIndex;
             return true;
         } else {
             return false;
