@@ -1,7 +1,5 @@
 package utils;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 import entities.Task;
 
 public class TaskManager {
@@ -13,6 +11,24 @@ public class TaskManager {
 
     public void addTask(Task newTask) {
         tasks.add(newTask);
+    }
+
+    public boolean validateNewTaskName(String name) {
+        for (Task task : tasks) {
+            if (task.getName().equalsIgnoreCase(name)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean validateNewTaskDescription(String description) {
+        for (Task task : tasks) {
+            if (task.getDescription().equalsIgnoreCase(description)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public boolean removeTask(String taskName) {
@@ -33,25 +49,36 @@ public class TaskManager {
 
     public void listTasks() {
         for (Task task : tasks) {
-            System.out.println(task);
+            System.out.println(task.getName());
         }
     }
 
-    public boolean validateNewTaskName(String name) {
+    public List<String> listCategories() {
+        Set<String> uniqueCategories = new HashSet<>();
+
         for (Task task : tasks) {
-            if (task.getName().equalsIgnoreCase(name)) {
-                return false;
+            if (task.getCategory() != null) {
+                uniqueCategories.add(task.getCategory());
             }
         }
-        return true;
+
+        List<String> sortedCategories = new ArrayList<>(uniqueCategories);
+        Collections.sort(sortedCategories);
+
+        for (String category : sortedCategories) {
+            System.out.println(category);
+        }
+        return sortedCategories;
     }
 
-    public boolean validateNewTaskDescription(String description) {
+    public List<Task> filterByCategory(String category) {
+        List<Task> result = new ArrayList<>();
         for (Task task : tasks) {
-            if (task.getDescription().equalsIgnoreCase(description)) {
-                return false;
+            if (task.getCategory().contains(category)) {
+                result.add(task);
             }
         }
-        return true;
+        return result;
     }
+
 }
