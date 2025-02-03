@@ -9,6 +9,10 @@ public class TaskManager {
 
     }
 
+    public ArrayList<Task> getTasks(){
+        return tasks;
+    }
+
     public void addTask(Task newTask) {
         tasks.add(newTask);
     }
@@ -65,10 +69,17 @@ public class TaskManager {
         List<String> sortedCategories = new ArrayList<>(uniqueCategories);
         Collections.sort(sortedCategories);
 
-        for (String category : sortedCategories) {
-            System.out.println(category);
-        }
         return sortedCategories;
+    }
+
+    public List<Task> filterByName(String name) {
+        List<Task> result = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.getName().equals(name)) {
+                result.add(task);
+            }
+        }
+        return result;
     }
 
     public List<Task> filterByCategory(String category) {
@@ -79,6 +90,30 @@ public class TaskManager {
             }
         }
         return result;
+    }
+
+    public List<Task> filterByPriorityLevel(int priorityLevel) {
+        List<Task> result = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.getPriorityLevel() == priorityLevel) {
+                result.add(task);
+            }
+        }
+        return result;
+    }
+
+    public List<Task> filterByStatus(int statusIndex) {
+        List<Task> result = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.getStatusIndex() == statusIndex) {
+                result.add(task);
+            }
+        }
+        return result;
+    }
+
+    public void deleteTask(Task task) {
+        tasks.remove(task);
     }
 
 }

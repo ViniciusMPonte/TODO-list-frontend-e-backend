@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class Task {
 
-    final List<String> STATUS = Arrays.asList("ToDo", "Doing", "Done");
+    public static final List<String> STATUS = Arrays.asList("ToDo", "Doing", "Done");
 
     String name;
     String description;
@@ -98,6 +98,10 @@ public class Task {
 
     public String getStatus() {
         return STATUS.get(statusIndex);
+    }
+
+    public int getStatusIndex() {
+        return statusIndex;
     }
 
     public boolean setStatusIndex(int statusIndex) {
