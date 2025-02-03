@@ -88,7 +88,7 @@ public class Task {
 
     public boolean setPriorityLevel(int priorityLevel) {
 
-        if(priorityLevel >= 1 && priorityLevel <= 5){
+        if (priorityLevel >= 1 && priorityLevel <= 5) {
             this.priorityLevel = priorityLevel;
             return true;
         } else {
@@ -105,7 +105,7 @@ public class Task {
     }
 
     public boolean setStatusIndex(int statusIndex) {
-        if(priorityLevel >= 0 && priorityLevel <= 2){
+        if (priorityLevel >= 0 && priorityLevel <= 2) {
             this.statusIndex = statusIndex;
             return true;
         } else {
@@ -135,16 +135,14 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
-                "STATUS=" + STATUS +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", category='" + category + '\'' +
-                ", priorityLevel=" + priorityLevel +
-                ", statusIndex=" + statusIndex +
-                ", startDate='" + startDate + '\'' +
-                ", modificationDate='" + modificationDate + '\'' +
-                ", finishDate='" + finishDate + '\'' +
-                '}';
+        return
+                name + "\n" +
+                        "   Descrição: " + description + "\n" +
+                        "   Categoria: " + category + "\n" +
+                        "   Prioridade: " + priorityLevel + "\n" +
+                        "   Status: " + STATUS.get(statusIndex) + "\n" +
+                        "   Data de criação: " + startDate + "\n" +
+                        "   Data de modificação: " + modificationDate + "\n" +
+                        "   Data de finalização: " + finishDate;
     }
 }

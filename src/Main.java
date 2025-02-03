@@ -11,35 +11,31 @@ public class Main {
         TaskManager taskManager = new TaskManager();
 
         //Simulação do database (remover depois)
-//        Task test = new Task(
-//                "Terminar ToDo List",
-//                "Projeto louco da ZG",
-//                "GZ-Hero"
-//        );
-//        taskManager.addTask(test);
+        Task test1 = new Task(
+                "Implementar pesistência",
+                "Adicionar a funcionalidade de manter todas as tarefas",
+                "Banco de dados"
+        );
+        test1.setPriorityLevel(1);
+        taskManager.addTask(test1);
 
         Task test2 = new Task(
-                "C",
-                "cccc",
-                "cccccc"
+                "Criar front-end",
+                "Criar uma interface web para integrar ao sistema",
+                "Front-end"
         );
+        test2.setPriorityLevel(2);
         taskManager.addTask(test2);
 
         Task test3 = new Task(
-                "B",
-                "bbbb",
-                "bbbbbb"
+                "Implementar filtragem por data",
+                "Criar um novo filtro que permita filtrar por data",
+                "Utilitários"
         );
+        test3.setPriorityLevel(4);
         taskManager.addTask(test3);
-
-        Task test4 = new Task(
-                "A",
-                "aaaa",
-                "bbbbbb"
-        );
-        taskManager.addTask(test4);
+        taskManager.sortByPriority();
         //--------------------
-        //taskManager.sortByName();
 
         System.out.println(Cli.START);
 

@@ -94,7 +94,7 @@ public class Cli {
 
     static {
         SELECT_BY_PRIORITY.put("instructionsSelect", "Digite o numero da prioridade para filtrar (de 1 a 5): ");
-        SELECT_BY_PRIORITY.put("emptyPriority", "Não há tarefas com esse nivel de prioridade");
+        SELECT_BY_PRIORITY.put("emptyPriority", "Não há tarefas com esse nível de prioridade");
         SELECT_BY_PRIORITY.put("invalidPriority", "Prioridade inválida, tente novamente");
         SELECT_BY_PRIORITY.put("notFound", "Prioridade não encontrada, tente novamente");
     }
@@ -324,6 +324,7 @@ public class Cli {
 
         if (confirmation) {
             taskManager.addTask(newTask);
+            taskManager.sortByPriority();
             listAllTasks(taskManager);
             System.out.println(CREATE_TASK_OPTIONS.get("successTaskCreation"));
         } else {
@@ -349,6 +350,7 @@ public class Cli {
         if (taskToEdit.getStatusIndex() == 2) {
             taskToEdit.updateFinishDate();
         }
+        taskManager.sortByPriority();
     }
 
     private static void editTaskDetails(Scanner input, Task task) {
