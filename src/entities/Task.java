@@ -105,7 +105,7 @@ public class Task {
     }
 
     public boolean setStatusIndex(int statusIndex) {
-        if (priorityLevel >= 0 && priorityLevel <= 2) {
+        if (statusIndex >= 0 && statusIndex <= 2) {
             this.statusIndex = statusIndex;
             return true;
         } else {
