@@ -476,7 +476,7 @@ public class Cli {
 
         while (true) {
             String textInput = input.nextLine();
-            if (listCategories.equals(textInput)) {
+            if (listCategories.contains(textInput)) {
                 categorySelected = textInput;
                 break;
             } else {
