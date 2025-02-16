@@ -1,0 +1,57 @@
+.tasks-container {
+    display: flex;
+    gap: 10px;
+}
+
+.column-tasks {
+    height: 80vh;
+    width: 250px;
+    border: 1px solid red;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.column-tasks > div {
+    border: 1px solid blue;
+    min-height: 50px;
+}
+
+.column-tasks-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid yellow;
+}
+
+.column-tasks-items * {
+    border: 1px solid green;
+}
+
+.column-tasks-item {
+    height: 50px;
+}
+
+.column-tasks-item {
+    display: flex;
+    align-items: center;
+}
+
+.task-priority {
+    width: 30px;
+    height: 30px;
+}
+
+.task-container {
+    border: 1px solid orangered;
+    flex-grow: 1;
+}
+
+.task-options {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.spacer {
+    flex-grow: 1;
+}
