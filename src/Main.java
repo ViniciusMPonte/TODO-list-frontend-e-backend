@@ -12,7 +12,7 @@ public class Main {
 
         //Simulação do database (remover depois)
         Task test1 = new Task(
-                "Implementar pesistência",
+                "Implementar persistência",
                 "Adicionar a funcionalidade de manter todas as tarefas",
                 "Banco de dados"
         );
