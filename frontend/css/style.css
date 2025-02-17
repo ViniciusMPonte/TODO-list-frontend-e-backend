@@ -55,3 +55,32 @@
 .spacer {
     flex-grow: 1;
 }
+
+.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 300px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+}
+textarea {
+    resize: vertical;
+}
+button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

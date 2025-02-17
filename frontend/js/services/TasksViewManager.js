@@ -3,10 +3,10 @@ class TasksViewManager {
         return [...tasksList].sort((a, b) => a.priorityLevel - b.priorityLevel)
     }
 
-    static renderTasks(tasksList, createHTMLComponent, elementInjector) {
-        this.sortTasksByPriority(tasksList).forEach(task => {
+    static renderTasks(tasksList, createHTMLComponent, injectElement) {
+        TasksViewManager.sortTasksByPriority(tasksList).forEach(task => {
             const taskHTML = createHTMLComponent(task)
-            elementInjector(`#${task.STATUS[task.statusIndex]}-tasks`, taskHTML)
+            injectElement(`#${task.STATUS[task.statusIndex]}-tasks`, taskHTML)
         })
     }
 

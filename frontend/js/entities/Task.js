@@ -29,6 +29,10 @@ class Task {
         this.modificationDate = modificationDate || null
         this.finishDate = finishDate || null
     }
+
+    static createNewTask(name, description, category, priorityLevel, statusIndex, startDate, modificationDate, finishDate) {
+        return new Task(name, description, category, priorityLevel, statusIndex, startDate, modificationDate, finishDate)
+    }
 }
 
 export default Task
