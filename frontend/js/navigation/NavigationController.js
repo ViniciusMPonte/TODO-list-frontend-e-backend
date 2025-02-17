@@ -229,7 +229,7 @@ class NavigationController {
     }
 
     activeReadFormListener() {
-        document.getElementById('back-button').addEventListener('click', () => {
+        document.querySelector('#view-task-form #back-button').addEventListener('click', () => {
             this.readToMain()
         })
     }
@@ -264,7 +264,7 @@ class NavigationController {
                 this.editToMain()
             })
 
-        document.getElementById('back-button').addEventListener('click', () => {
+        document.querySelector('#edit-task-form #back-button').addEventListener('click', () => {
             this.editToMain()
         })
     }
