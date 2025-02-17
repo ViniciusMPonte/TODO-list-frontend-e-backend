@@ -103,7 +103,7 @@ button {
 }
 
 .task-view {
-    background-image: url('/img/view-icon.png');
+    background-image: url('../img/view-icon.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 20px;
@@ -113,7 +113,7 @@ button {
 }
 
 .task-edit {
-    background-image: url('/img/edit-icon.png');
+    background-image: url('../img/edit-icon.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 20px;
@@ -123,7 +123,7 @@ button {
 }
 
 .task-delete {
-    background-image: url('/img/delete-icon.png');
+    background-image: url('../img/delete-icon.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 20px;
