@@ -1,35 +1,53 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(to right, #ff69b4, #8a2be2);
+}
+
 .tasks-container {
     display: flex;
     gap: 10px;
 }
 
-.column-tasks {
+.column-tasks  {
     height: 80vh;
     width: 250px;
-    border: 1px solid red;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
+#create-task-form, #edit-task-form {
+    height: 80vh;
+    max-width: 500px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
 .column-tasks > div {
-    border: 1px solid blue;
-    min-height: 50px;
+    min-height: 40px;
 }
 
 .column-tasks-items {
     flex-grow: 1;
     overflow-y: auto;
-    border: 1px solid yellow;
-}
-
-.column-tasks-items * {
-    border: 1px solid green;
 }
 
 .column-tasks-item {
-    height: 50px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin: 10px 0;
+}
+
+.column-tasks-item {
+    min-height: 50px;
+    padding: 5px;
 }
 
 .column-tasks-item {
@@ -43,7 +61,6 @@
 }
 
 .task-container {
-    border: 1px solid orangered;
     flex-grow: 1;
 }
 
@@ -84,3 +101,72 @@ button {
     border: none;
     cursor: pointer;
 }
+
+.task-view {
+    background-image: url('/img/view-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.task-edit {
+    background-image: url('/img/edit-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.task-delete {
+    background-image: url('/img/delete-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 3px;
+}
+
+
+.column-tasks-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+}
+
+.column-tasks-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.column-tasks-add:hover {
+    background-color: #0056b3;
+}
+
+.task-category{
+
+    background-color: #90ee90;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+
+}
+

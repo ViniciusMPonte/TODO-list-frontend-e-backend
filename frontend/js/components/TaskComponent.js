@@ -8,9 +8,9 @@ export default class TaskComponent {
                     <div class="task-options">
                         <div class="task-category">${task.category}</div>
                         <div class="spacer"></div>
-                        <div class="task-view">v</div>
-                        <div class="task-edit">e</div>
-                        <div class="task-delete">d</div>
+                        <div class="task-view"></div>
+                        <div class="task-edit"></div>
+                        <div class="task-delete"></div>
                     </div>
                 </div>
             </div>
