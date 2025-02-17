@@ -181,6 +181,31 @@ class NavigationController {
         document
             .getElementById('create-task-button')
             .addEventListener('click', () => {
+                const form = document.querySelector('#create-task-form')
+                if (!form.checkValidity()) {
+
+                    if (!document.getElementById('name').checkValidity()) {
+                        document.getElementById('name').reportValidity()
+                    }
+
+                    if (!document.getElementById('description').checkValidity()) {
+                        document.getElementById('description').reportValidity()
+                    }
+
+                    if (!document.getElementById('category').checkValidity()) {
+                        document.getElementById('category').reportValidity()
+                    }
+
+                    if (!document.getElementById('priorityLevel').checkValidity()) {
+                        document.getElementById('priorityLevel').reportValidity()
+                    }
+
+                    if (!document.getElementById('statusIndex').checkValidity()) {
+                        document.getElementById('statusIndex').reportValidity()
+                    }
+
+                    return
+                }
                 this.tasksList
                     .getTasks()
                     .push(
