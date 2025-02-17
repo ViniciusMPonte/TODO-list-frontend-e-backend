@@ -6,6 +6,7 @@ import TasksViewManager from './services/TasksViewManager.js'
 import mockTasks from './mocks/mockTasks.js'
 import Task from './entities/Task.js'
 import NavigationController from './navigation/NavigationController.js'
+import TasksManager from './services/TasksManager.js'
 
 let navigationController = new NavigationController({
     injectElement: DOMHelper.addElement,
@@ -13,8 +14,8 @@ let navigationController = new NavigationController({
     renderTasks: TasksViewManager.renderTasks,
     columnTasksComponent: ColumnTasksComponent.createColumnTasks,
     taskComponent: TaskComponent.createTaskCard,
-    createTaskFormComponent: CRUDTaskComponent.createTaskForm,
-    tasksList: mockTasks,
+    CRUDComponents: CRUDTaskComponent,
+    tasksList: new TasksManager(mockTasks),
 })
 
 navigationController.loadMain()

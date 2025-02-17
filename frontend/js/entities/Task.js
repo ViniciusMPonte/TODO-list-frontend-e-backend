@@ -1,6 +1,7 @@
 class Task {
     STATUS = ['todo', 'doing', 'done']
 
+    id
     name
     description
     category
@@ -20,6 +21,7 @@ class Task {
         modificationDate,
         finishDate
     ) {
+        this.id = Math.floor(Math.random() * 1000000)
         this.name = name
         this.description = description
         this.category = category
