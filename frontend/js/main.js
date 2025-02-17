@@ -1,16 +1,7 @@
 import DOMHelper from './helpers/DOMHelper.js'
-import Task from './components/Task.js'
+import TaskComponent from './components/TaskComponent.js'
+import TasksViewManager from './services/TasksViewManager.js'
+import mockTasks from './mocks/mockTasks.js'
 
 
-DOMHelper.addElement(
-    '#todo-tasks',
-    Task.createTaskElement({ title: 'Exemplo de Tarefa', category: 'Trabalho' })
-)
-DOMHelper.addElement(
-    '#doing-tasks',
-    Task.createTaskElement({ title: 'Exemplo de Tarefa', category: 'Trabalho' })
-)
-DOMHelper.addElement(
-    '#done-tasks',
-    Task.createTaskElement({ title: 'Exemplo de Tarefa', category: 'Trabalho' })
-)
+TasksViewManager.renderTasks(mockTasks, TaskComponent.createTaskCard, DOMHelper.addElement)
