@@ -197,6 +197,10 @@ class NavigationController {
 
                 this.createToMain()
             })
+
+        document.getElementById('back-button').addEventListener('click', () => {
+            this.createToMain()
+        })
     }
 
     activeReadFormListener() {
@@ -210,15 +214,28 @@ class NavigationController {
             .getElementById('edit-task-button')
             .addEventListener('click', () => {
                 const task = this.tasksList.getTaskById(
-                    Number(document.getElementById('edit-task-form').dataset.taskId)
+                    Number(
+                        document.getElementById('edit-task-form').dataset.taskId
+                    )
                 )
 
-                task.name = document.querySelector('#edit-task-form #name').value
-                task.description = document.querySelector('#edit-task-form #description').value
-                task.category = document.querySelector('#edit-task-form #category').value
-                task.priorityLevel = Number(document.querySelector('#edit-task-form #priorityLevel').value)
-                task.statusIndex = Number(document.querySelector('#edit-task-form #statusIndex').value)
-                
+                task.name = document.querySelector(
+                    '#edit-task-form #name'
+                ).value
+                task.description = document.querySelector(
+                    '#edit-task-form #description'
+                ).value
+                task.category = document.querySelector(
+                    '#edit-task-form #category'
+                ).value
+                task.priorityLevel = Number(
+                    document.querySelector('#edit-task-form #priorityLevel')
+                        .value
+                )
+                task.statusIndex = Number(
+                    document.querySelector('#edit-task-form #statusIndex').value
+                )
+
                 this.editToMain()
             })
 

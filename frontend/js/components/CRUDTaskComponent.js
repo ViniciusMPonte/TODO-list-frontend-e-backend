@@ -45,6 +45,7 @@ class CRUDTaskComponent {
                 </div>
 
                 <button type="button" id="create-task-button">Criar tarefa</button>
+                <button type="button" id="back-button">Voltar</button>
             </form>        
         `
     }
