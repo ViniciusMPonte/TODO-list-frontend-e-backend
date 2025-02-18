@@ -178,34 +178,16 @@ class NavigationController {
     }
 
     activeCreateFormListener() {
+        const validateForm = this.validateForm.bind(this)
         document
             .getElementById('create-task-button')
             .addEventListener('click', () => {
                 const form = document.querySelector('#create-task-form')
                 if (!form.checkValidity()) {
-
-                    if (!document.getElementById('name').checkValidity()) {
-                        document.getElementById('name').reportValidity()
-                    }
-
-                    if (!document.getElementById('description').checkValidity()) {
-                        document.getElementById('description').reportValidity()
-                    }
-
-                    if (!document.getElementById('category').checkValidity()) {
-                        document.getElementById('category').reportValidity()
-                    }
-
-                    if (!document.getElementById('priorityLevel').checkValidity()) {
-                        document.getElementById('priorityLevel').reportValidity()
-                    }
-
-                    if (!document.getElementById('statusIndex').checkValidity()) {
-                        document.getElementById('statusIndex').reportValidity()
-                    }
-
+                    validateForm('#create-task-form')
                     return
                 }
+
                 this.tasksList
                     .getTasks()
                     .push(
@@ -229,15 +211,24 @@ class NavigationController {
     }
 
     activeReadFormListener() {
-        document.querySelector('#view-task-form #back-button').addEventListener('click', () => {
-            this.readToMain()
-        })
+        document
+            .querySelector('#view-task-form #back-button')
+            .addEventListener('click', () => {
+                this.readToMain()
+            })
     }
 
     activeEditFormListener() {
+        const validateForm = this.validateForm.bind(this)
         document
             .getElementById('edit-task-button')
             .addEventListener('click', () => {
+                const form = document.querySelector('#edit-task-form')
+                if (!form.checkValidity()) {
+                    validateForm('#edit-task-form')
+                    return
+                }
+
                 const task = this.tasksList.getTaskById(
                     Number(
                         document.getElementById('edit-task-form').dataset.taskId
@@ -264,8 +255,27 @@ class NavigationController {
                 this.editToMain()
             })
 
-        document.querySelector('#edit-task-form #back-button').addEventListener('click', () => {
-            this.editToMain()
+        document
+            .querySelector('#edit-task-form #back-button')
+            .addEventListener('click', () => {
+                this.editToMain()
+            })
+    }
+
+    validateForm(formSelector) {
+        const fieldsSelector = [
+            '#name',
+            '#description',
+            '#category',
+            '#priorityLevel',
+            '#statusIndex',
+        ]
+
+        fieldsSelector.forEach((fieldSelector) => {
+            const field = document.querySelector(`${formSelector} ${fieldSelector}`)
+            if (field && !field.checkValidity()) {
+                field.reportValidity()
+            }
         })
     }
 }

@@ -43,9 +43,11 @@ class CRUDTaskComponent {
                         <option value="2">Feito</option>
                     </select>
                 </div>
-
-                <button type="button" id="create-task-button">Criar tarefa</button>
-                <button type="button" id="back-button">Voltar</button>
+                <div class="spacer"></div>
+                <div class="buttons-container">
+                    <button type="button" id="create-task-button">Criar tarefa</button>
+                    <button type="button" id="back-button">Voltar</button>
+                </div>
             </form>        
         `
     }
@@ -101,8 +103,11 @@ class CRUDTaskComponent {
                         <option value="2" ${task.statusIndex == 2 ? 'selected': ''}>Feito</option>
                     </select>
                 </div>
-                <button type="button" id="create-task-button" class="hidden" disabled>Criar tarefa</button>
-                <button type="button" id="back-button">Voltar</button>
+                <div class="spacer"></div>
+                <div class="buttons-container">
+                    <button type="button" id="create-task-button" class="hidden" disabled>Criar tarefa</button>
+                    <button type="button" id="back-button">Voltar</button>
+                </div>    
             </form>
         `
     }
@@ -117,6 +122,7 @@ class CRUDTaskComponent {
                         id="name"
                         name="name"
                         value="${task.name}"
+                        required
                     />
                 </div>
 
@@ -127,17 +133,18 @@ class CRUDTaskComponent {
                         id="category"
                         name="category"
                         value="${task.category}"
+                        required
                     />
                 </div>
 
                 <div class="form-group">
                     <label for="description">Descrição:</label>
-                    <textarea id="description" name="description" rows="3">${task.description}</textarea>
+                    <textarea id="description" name="description" rows="3" required>${task.description}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="priorityLevel">Prioridade:</label>
-                    <select id="priorityLevel" name="priorityLevel">
+                    <select id="priorityLevel" name="priorityLevel" required>
                         <option value="">Selecione...</option>
                         <option value="1" ${task.priorityLevel == 1 ? 'selected': ''}>1</option>
                         <option value="2" ${task.priorityLevel == 2 ? 'selected': ''}>2</option>
@@ -149,15 +156,18 @@ class CRUDTaskComponent {
 
                 <div class="form-group">
                     <label for="statusIndex">Status:</label>
-                    <select id="statusIndex" name="statusIndex">
+                    <select id="statusIndex" name="statusIndex" required>
                         <option value="">Selecione...</option>
                         <option value="0" ${task.statusIndex == 0 ? 'selected': ''}>A fazer</option>
                         <option value="1" ${task.statusIndex == 1 ? 'selected': ''}>Fazendo</option>
                         <option value="2" ${task.statusIndex == 2 ? 'selected': ''}>Feito</option>
                     </select>
                 </div>
-                <button type="button" id="edit-task-button">Editar tarefa</button>
-                <button type="button" id="back-button">Voltar</button>
+                <div class="spacer"></div>
+                <div class="buttons-container">
+                    <button type="button" id="edit-task-button">Editar tarefa</button>
+                    <button type="button" id="back-button">Voltar</button>
+                </div>
             </form>
         `
     }
